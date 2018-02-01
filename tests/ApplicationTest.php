@@ -28,13 +28,6 @@ class ApplicationTest extends TestCase
         $this->assertInstanceOf(ApplicationInterface::class, Application::init([]));
     }
 
-    public function testCanWeCallBootstrap()
-    {
-        /** @var ApplicationInterface $instance */
-        $instance = new Application;
-        $this->assertInstanceOf(ApplicationInterface::class, $instance->bootstrap([]));
-    }
-
     public function testCanWeRun()
     {
         /** @var Application $instance */
