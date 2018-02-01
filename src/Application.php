@@ -40,6 +40,6 @@ class Application implements ApplicationInterface
      */
     public function run()
     {
-        return 'foo';
+        return bar();
     }
 }

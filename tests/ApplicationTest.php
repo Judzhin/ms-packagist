@@ -39,6 +39,6 @@ class ApplicationTest extends TestCase
             ->method('bootstrap')
             ->will($this->returnValue($instance));
 
-        $this->assertEquals('foo', $mock->bootstrap([])->run());
+        $this->assertEquals('bar', $mock->bootstrap([])->run());
     }
 }
