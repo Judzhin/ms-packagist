@@ -11,7 +11,6 @@ namespace Packagist;
  */
 class Application implements ApplicationInterface
 {
-
     /** @var array */
     private $options;
 
@@ -37,10 +36,10 @@ class Application implements ApplicationInterface
     }
 
     /**
-     *
+     * @return string
      */
     public function run()
     {
-        echo hello_helper_fn();
+        return 'foo';
     }
 }

@@ -16,6 +16,25 @@ use PHPUnit\Framework\TestCase;
  */
 class ApplicationTest extends TestCase
 {
+    public function testCanWeCreate()
+    {
+        /** @var \PHPUnit_Framework_MockObject_MockObject $mock */
+        $mock = $this->createMock(Application::class);
+        $this->assertInstanceOf(ApplicationInterface::class, $mock);
+    }
+
+    public function testCanWeCallInit()
+    {
+        $this->assertInstanceOf(ApplicationInterface::class, Application::init([]));
+    }
+
+    public function testCanWeCallBootstrap()
+    {
+        /** @var ApplicationInterface $instance */
+        $instance = new Application;
+        $this->assertInstanceOf(ApplicationInterface::class, $instance->bootstrap([]));
+    }
+
     public function testCanWeRun()
     {
         /** @var Application $instance */
@@ -23,9 +42,10 @@ class ApplicationTest extends TestCase
 
         /** @var \PHPUnit_Framework_MockObject_MockObject $mock */
         $mock = $this->createMock(Application::class);
-        $mock->method('bootstrap')
+        $mock->expects($this->any())
+            ->method('bootstrap')
             ->will($this->returnValue($instance));
 
-        $this->assertInstanceOf(ApplicationInterface::class, $mock->bootstrap([]));
+        $this->assertEquals('foo', $mock->bootstrap([])->run());
     }
 }
