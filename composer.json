@@ -1,0 +1,39 @@
+{
+    "name": "judzhin/packagist",
+    "authors": [
+        {
+            "name": "Judzhin Miles",
+            "email": "info@msbios.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Packagist\\": "src/"
+        },
+        "files": [
+            "helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PackagistTest\\": "tests/"
+        }
+    },
+    "scripts": {
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "test": [
+            "@cs-check",
+            "phpunit --colors=always"
+        ],
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
+        "upload-coverage": "coveralls -v",
+        "serve": "php -S 0.0.0.0:3107 -t public index.php"
+    },
+    "require": {
+        "zendframework/zend-stdlib": "^3.1"
+    },
+    "require-dev": {
+        "msbios/test": "^1.0"
+    }
+}
