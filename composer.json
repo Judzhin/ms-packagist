@@ -31,7 +31,8 @@
         "serve": "php -S 0.0.0.0:3107 -t public index.php"
     },
     "require": {
-        "zendframework/zend-stdlib": "^3.1"
+        "zendframework/zend-stdlib": "^3.1",
+        "psr/container": "^1.0"
     },
     "require-dev": {
         "msbios/test": "^1.0"

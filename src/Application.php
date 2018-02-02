@@ -20,7 +20,7 @@ class Application implements ApplicationInterface
      */
     public static function init(array $options = [])
     {
-        /** @var Application $application */
+        /** @var ApplicationInterface $application */
         $application = new self();
         return $application->bootstrap($options);
     }
